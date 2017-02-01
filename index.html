@@ -1,0 +1,143 @@
+<!DOCTYPE -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css">
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready (function (){
+				//alert("jquery funcionando..........");
+				$("#btnSumar").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var suma=n1+n2;
+					$("#res").val(suma);
+					//alert("valor de la suma es: "+suma);
+				});
+				$("#btnResta").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var resta=n1-n2;
+					$("#res").val(resta);
+				});
+				$("#btnMulti").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var multi=n1*n2;
+					$("#res").val(multi);
+				});
+				$("#btnDivi").click(function(){
+					var n1=parseInt($("#num1").val());
+					var n2=parseInt($("#num2").val());
+					var divi=n1/n2;
+					$("#res").val(divi);
+				});
+				$("#btnFacto").click(function(){
+					var facto=1;
+					var num=parseInt($("#num").val());
+					while(num!=0){
+						facto=facto*num;
+						num--;
+					}
+					$("#resu").val(facto);
+				});
+			});
+	</script>
+	<style type="text/css">
+		p{
+			text-align: center;
+		}
+		#Principal{
+			background-color: #000040; 
+		}
+		#Contacto{
+			background-color: #800000; /*rojo oscuro*/ 
+		}
+		.colorVerde{
+			/*color: #08590E;*/
+			font-size: 30px;
+		}
+		.fondo{
+			background-color: #0F36E5;
+		}
+		.copy{
+			font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div data-role="page" id="Principal" data-theme="b">
+		<div data-role="header">
+			<!--a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a-->
+			<p class="colorVerde">Principal</p>
+		</div>
+		<div data-role="content">
+			<a href="#Basicas" data-role="button" data-transition="turn">OPERACIONES BÁSICAS</a>
+			<a href="#Factorial" data-role="button" data-transition="pop">OBTENER FACTORIAL</a>
+			<a href="#Contacto" data-role="button" data-transition="flow">DATOS DEL DESARROLLADOR</a>
+		</div>
+		<div data-role="footer">
+			<p class="copy">©Copyright all rights reserved</p>
+		</div>
+	</div>
+	<div data-role="page" id="Contacto" data-theme="b"> <!--Segunda interfaz-->
+		<div data-role="header">
+			<a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+			<p class="colorVerde">Datos del Desarrollador</p>
+		</div>
+		<div data-role="content">
+			<p>Marco Antonio Cantero Ramiro</p>
+			<p>No. de Control: 13940316*</p>
+			<p>Bases de Datos Moviles</p>
+			<p>Cel.: 2761127455</p>
+			<p>marck5_2@hotmail.com</p>
+		</div>
+		<div data-role="footer">
+			<a href="https://m.facebook.com/?refsrc=https%3A%2F%2Fwww.facebook.com%2F&_rdr" class="ui-btn ui-icon-plus ui-btn-icon-left">Facebook</a>
+			<p class="copy">©Copyright all rights reserved</p>
+		</div>
+	</div>
+	<div data-role="page" id="Basicas" data-theme="b" class="fondo"> <!--Tercera interfaz-->
+		<div data-role="header">
+			<p class="colorVerde">Operaciones Básicas</p>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+					<li><a href="#Contacto" class="ui-btn ui-icon-plus ui-btn-icon-top">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<input type="text" id="num1" placeholder="Escribe un número">
+			<input type="text" id="num2" placeholder="Escribe un número">
+			<input type="text" id="res" placeholder="Resultado">
+			<input type="button" id="btnSumar" value="Calcular suma">
+			<input type="button" id="btnResta" value="Calcular resta">
+			<input type="button" id="btnMulti" value="Calcular multiplicación">
+			<input type="button" id="btnDivi" value="Calcular división">
+		</div>
+		<div data-role="footer">
+			<p class="copy">©Copyright all rights reserved</p>
+		</div>
+	</div>
+	<div data-role="page" id="Factorial" data-theme="b" class="fondo"> <!--Tercera interfaz-->
+		<div data-role="header">
+			<p class="colorVerde">Obtener el Factorial</p>
+			<div data-role="navbar">
+				<a href="#Principal" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+			</div>
+		</div>
+		<div data-role="content">
+			<input type="text" id="num" placeholder="Escribe un número">
+			<input type="text" id="resu" placeholder="Resultado">
+			<input type="button" id="btnFacto" value="Calcular Factorial">
+		</div>
+		<div data-role="footer">
+			<p class="copy">©Copyright all rights reserved</p>
+		</div>
+	</div>
+</body>
+</html>
